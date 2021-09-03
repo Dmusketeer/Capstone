@@ -1,0 +1,60 @@
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/background1.jpg");
+  height: 10vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.logo {
+  float: left;
+  height: 100px;
+  width: auto;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.navbar ul {
+  display: flex;
+  float: right;
+}
+.navbar ul li a {
+  margin: 20px;
+  padding: 20px;
+  color: white;
+  list-style: none;
+  text-transform: uppercase;
+}
+.navUl {
+  list-style-type: none;
+  margin-top: 40px;
+  text-decoration: none;
+}
+
+/* master key to remove the border bottom form links  */
+a {
+  text-decoration: none;
+}
+
+.navUl :hover {
+  color: rgb(91, 241, 21);
+}
+
+a:hover {
+  border-bottom: 2px solid rgb(91, 241, 21);
+  border-radius: 20px;
+  box-shadow: 1px 2px red;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix::after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.heroTextBox h1 {
+  text-transform: uppercase;
+}
