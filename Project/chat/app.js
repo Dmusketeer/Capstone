@@ -7,10 +7,13 @@ const PORT = process.env.PORT || 3000
 
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', (req, res) => {
+app.get('/chat', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
+app.get('/', (req, res) => {
+    res.send('hey how are you buddy!')
+})
 // Socket 
 const io = require('socket.io')(http)
 
