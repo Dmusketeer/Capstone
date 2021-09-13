@@ -1,9 +1,11 @@
 const socket = io()
+let name;
 let textarea = document.querySelector('#textarea')
 let messageArea = document.querySelector('.message__area')
+let sendButton = document.querySelector('#sendbtn')
 do {
-    let Name = prompt('Please enter your name: ')
-} while (!Name)
+    name = prompt('Please enter your name: ')
+} while (!name)
 
 textarea.addEventListener('keyup', (e) => {
     if (e.key === 'Enter') {
@@ -12,9 +14,9 @@ textarea.addEventListener('keyup', (e) => {
 })
 
 function sendMessage(message) {
-    let msg = {
-        user: Name,
-        message: message.trim()
+    var msg = {
+        user: name,
+        message: message
     }
     // Append 
     appendMessage(msg, 'outgoing')
@@ -25,6 +27,8 @@ function sendMessage(message) {
     socket.emit('message', msg)
 
 }
+
+
 
 function appendMessage(msg, type) {
     let mainDiv = document.createElement('div')
@@ -38,6 +42,11 @@ function appendMessage(msg, type) {
     mainDiv.innerHTML = markup
     messageArea.appendChild(mainDiv)
 }
+
+
+sendButton.addEventListener('click',
+    sendMessage
+);
 
 // Recieve messages 
 socket.on('message', (msg) => {
